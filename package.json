@@ -8,7 +8,8 @@
     "test": "LOG_LEVEL=error VITE_CJS_TRACE=true vitest",
     "xrpld:create": "xrpld-netgen create:standalone --protocol xahau --version 2024.1.25-release+738",
     "xrpld:start": "xrpld-netgen up:standalone",
-    "xrpld:stop": "xrpld-netgen down:standalone"
+    "xrpld:stop": "xrpld-netgen down:standalone",
+    "trace": "docker logs --tail 100 -f xahau 2>&1 | cut -d ' ' -f 5- | grep -E 'Publishing ledger|HookInfo|HookTrace|HookError|preclaim result'"
   },
   "keywords": [],
   "author": "",
