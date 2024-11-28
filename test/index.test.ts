@@ -15,6 +15,7 @@ import {
   readHookBinaryHexFromNS,
   clearAllHooksV3,
   clearHookStateV3,
+  Xrpld,
 } from '@transia/hooks-toolkit'
 
 const namespace = 'namespace'
@@ -56,6 +57,14 @@ describe('test', () => {
   })
 
   it('', async () => {
-    expect(0).toBe(0)
+    const response = await Xrpld.submit(testContext.client, {
+      tx: {
+        TransactionType: 'Invoke',
+        Account: testContext.alice.address,
+      },
+      wallet: testContext.alice,
+    })
+    console.log(response.meta)
+    expect(response.meta).toHaveProperty('HookExecutions')
   })
 })
