@@ -6,10 +6,9 @@
   "scripts": {
     "build": "c2wasm-cli contracts/index.c build/",
     "test": "LOG_LEVEL=error VITE_CJS_TRACE=true vitest",
-    "xrpld:create": "xrpld-netgen create:standalone --protocol xahau --version 2024.1.25-release+738",
-    "xrpld:start": "xrpld-netgen up:standalone",
-    "xrpld:stop": "xrpld-netgen down:standalone",
-    "trace": "docker logs --tail 100 -f xahau 2>&1 | cut -d ' ' -f 5- | grep -E 'Publishing ledger|HookInfo|HookTrace|HookError|preclaim result'"
+    "xrpld:start": "xrpld-netgen up:standalone --protocol xahau --version 2024.11.18-release+1141",
+    "xrpld:stop": "xrpld-netgen down:standalone --protocol xahau --version 2024.11.18-release+1141",
+    "trace": "docker logs --tail 100 -f xahau 2>&1 | cut -d ' ' -f 5- | grep -E 'Publishing ledger|HookInfo|HookTrace|HookError|HookEmit|preclaim result'"
   },
   "keywords": [],
   "author": "",
