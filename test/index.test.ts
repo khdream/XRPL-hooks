@@ -6,6 +6,7 @@ import {
   setupClient,
   teardownClient,
 } from '@transia/hooks-toolkit/dist/npm/src/libs/xrpl-helpers'
+import { compileC } from '@xahau/hooks-cli'
 
 import {
   type SetHookParams,
@@ -24,6 +25,7 @@ describe('test', () => {
   let testContext: XrplIntegrationTestContext
 
   beforeAll(async () => {
+    await compileC('./contracts/index.c', 'build/')
     testContext = await setupClient(serverUrl)
     const hook = {
       CreateCode: readHookBinaryHexFromNS('../build/index'),
