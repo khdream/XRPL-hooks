@@ -44,12 +44,6 @@ extern int64_t
 float_divide(int64_t float1, int64_t float2);
 
 extern int64_t
-float_exponent(int64_t float1);
-
-extern int64_t
-float_exponent_set(int64_t float1, int32_t exponent);
-
-extern int64_t
 float_int(int64_t float1, uint32_t decimal_places, uint32_t abs);
 
 extern int64_t
@@ -88,9 +82,6 @@ float_set(int32_t exponent, int64_t mantissa);
 
 extern int64_t
 float_sign(int64_t float1);
-
-extern int64_t
-float_sign_set(int64_t float1, uint32_t negative);
 
 extern int64_t
 float_sto(
@@ -203,9 +194,6 @@ slot_count(uint32_t slot);
 
 extern int64_t
 slot_float(uint32_t slot_no);
-
-extern int64_t
-slot_id(uint32_t write_ptr, uint32_t write_len, uint32_t slot);
 
 extern int64_t
 slot_set(uint32_t read_ptr, uint32_t read_len, uint32_t slot);
